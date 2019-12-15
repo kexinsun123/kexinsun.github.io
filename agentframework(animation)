@@ -1,5 +1,6 @@
 import random
 
+#Set up a class.
 class Agent():
     def __init__ (self, x, y, environment, agents, neighbourhood):
 #        self.y = random.randint(0,99)
@@ -8,7 +9,8 @@ class Agent():
         self.store = 0
         self.neighbourhood = neighbourhood
         self.agents = agents
-        
+
+#Adjust the agent.      
         if x == None:
             self.x = random.randint(0,300)
         else:
@@ -17,7 +19,8 @@ class Agent():
             self.y = random.randint(0,300)
         else:
             self.y = y
-            
+
+#Define functions of move, eat, distance_between and share_with_neighbours.           
     def move(self):
          if random.random() < 0.5:
             self.x = (self.x + 1) % 300
@@ -54,3 +57,4 @@ class Agent():
                agent.store = ave
                
                print("sharing " + str(dist) + " " + str(ave))
+               
